@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completed Order - Limited Edit Capabilities</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+    <div class="wireframe">
+        <!-- Header -->
+        <div class="header">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="logo"></div>
+                <div class="breadcrumb">
+                    <span>← Back to site</span>
+                    <span>|</span>
+                    <span>Administration</span>
+                    <span>Commerce</span>
+                    <span>Orders</span>
+                    <span>View Default</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <span>☆</span>
+                <span>🔍</span>
+                <span>🛒</span>
+                <span>👤</span>
+            </div>
+        </div>
+        
+        <div class="layout">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <!-- Order Header -->
+                    <div class="order-header">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <h1 class="order-title">Order #10003 ☆</h1>
+                            <!-- Completed Order State Indicator -->
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Completed Order Notice -->
+                    <div style="background: #d4edda; border: 2px solid #c3e6cb; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                        <div style="display: flex; align-items: start; gap: 12px;">
+                            <div>
+                                <div style="font-weight: bold; color: #155724; margin-bottom: 8px;">Order Successfully Completed</div>
+                                <div style="font-size: 13px; color: #155724; line-height: 1.4; margin-bottom: 10px;">
+                                    This order has been fulfilled and delivered to the customer.
+                                </div>
+                                <ul style="font-size: 12px; color: #155724; margin-left: 20px; margin-bottom: 12px;">
+                                    <li>Order placed: August 21, 2025 at 3:45 PM</li>
+                                    <li>Shipped: August 22, 2025 at 10:30 AM</li>
+                                    <li>Delivered: August 26, 2025 at 2:15 PM</li>
+                                    <li>Payment captured: $2,813.99</li>
+                                </ul>
+                                <div style="font-size: 11px; color: #495057; background: #f8f9fa; padding: 6px 8px; border-radius: 3px;">
+                                    <strong>🔒 Limited Actions:</strong> Only receipt resending and order reassignment are available for completed orders
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tabs -->
+                    <div class="tabs">
+                        <div class="tab active">View</div>
+                        <div class="tab">Shipments</div>
+                        <div class="tab">Payments</div>
+                    </div>
+                    
+                    <!-- Address Information (Read-only) -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <!-- Billing Information -->
+                        <div class="info-section">
+                            <div class="info-header" style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Billing Information</span>
+                                <span class="lock-icon" style="font-size: 12px;">🔒 Locked</span>
+                            </div>
+                            <div class="info-content">
+                                <div class="locked-field">
+                                    <div class="address-block">
+                                        Sarah Johnson<br>
+                                        Tech Solutions Inc<br>
+                                        456 Innovation Dr.<br>
+                                        San Francisco, CA 94105<br>
+                                        United States
+                                    </div>
+                                    <div class="info-line">
+                                    <span class="info-label">Method:</span>
+                                    Credit Card (•••• 4242)
+                                </div>
+                                <div class="info-line">
+                                    <span class="info-label">Amount:</span>
+                                    $2,813.99
+                                </div>
+                                <div class="info-line">
+                                    <span class="info-label">Status:</span>
+                                    <span style="color: #28a745; font-weight: bold;">Captured</span>
+                                </div>
+                              
+                                <div class="info-line">
+                                    <span class="info-label">Captured At:</span>
+                                    August 21, 2025 3:47 PM
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Shipping Information -->
+                        <div class="info-section">
+                            <div class="info-header" style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Shipping Information</span>
+                                <span class="lock-icon" style="font-size: 12px;">🔒 Locked</span>
+                            </div>
+                            <div class="info-content">
+                                <div class="locked-field">
+                                    <div class="address-block">
+                                        Sarah Johnson<br>
+                                        Tech Solutions Inc<br>
+                                        456 Innovation Dr.<br>
+                                        San Francisco, CA 94105<br>
+                                        United States
+                                    </div>
+                                    <div class="info-line" style="margin-top: 10px;">
+                                        <span class="info-label">Method:</span>
+                                        Standard Shipping (5-7 days)
+                                    </div>
+                                    <div class="info-line">
+                                        <span class="info-label">Tracking:</span>
+                                        <a href="#" style="color: #007cba;">1Z999AA10123456784</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Items (Read-only) -->
+                    <div class = "order-items">
+                        <div style="background: #f0f0f0; padding: 15px; border-bottom: 2px solid #333; display: flex;  justify-content: space-between;align-items: center;">
+                            <div style="font-weight: bold;">Order Items</div>
+                            <span class="lock-icon" style="font-size: 12px;">🔒 Finalized</span>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 10px 15px; border-bottom: 1px solid #dee2e6; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 80px; gap: 15px; font-weight: bold; font-size: 13px;">
+                            <div>Title</div>
+                            <div>Unit price</div>
+                            <div>Quantity</div>
+                            <div>Total price</div>
+                            <div style="text-align: center;">Status</div>
+                        </div>
+                        <div style="padding: 15px; border-bottom: 1px solid #ccc; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 80px; gap: 15px;">
+                            <div>MacBook Pro 16" - Silver</div>
+                            <div>$2,499.00</div>
+                            <div>1.00</div>
+                            <div>$2,499.00</div>
+                            <div style="text-align: center;">
+                                <span style="font-size: 11px; padding: 2px 6px; background: #d4edda; color: #155724; border-radius: 3px;">Delivered</span>
+                            </div>
+                        </div>
+                        <div style="padding: 15px; border-bottom: 1px solid #ccc; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 80px; gap: 15px;">
+                            <div>AppleCare+ Protection</div>
+                            <div>$399.00</div>
+                            <div>1.00</div>
+                            <div>$399.00</div>
+                            <div style="text-align: center;">
+                                <span style="font-size: 11px; padding: 2px 6px; background: #d4edda; color: #155724; border-radius: 3px;">Activated</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Order Totals -->
+                        <div style="background: #f8f9fa; text-align: right; padding: 15px; border-top: 2px solid #333;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span>Subtotal</span>
+                                <span>$2,898.00</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span>Promotional Discount</span>
+                                <span style="color: #dc3545;">-$100.00</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span>Shipping</span>
+                                <span>$15.99</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span>Tax</span>
+                                <span>$0.00</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-weight: bold; border-top: 1px solid #333; padding-top: 5px; font-size: 16px;">
+                                <span>Total Paid</span>
+                                <span style="color: #28a745;">$2,813.99</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- order activity -->
+                    <div class="order-activity">
+                        <div class="section-header">Order activity</div>
+                        <div style="padding: 15px; border-bottom: 1px solid #ccc;">
+                            <div class="collapsible">Comment on this order</div>
+                        </div>
+                        <div style="padding: 15px;">
+                            <div style="order-activity-head">
+                                <div>Date</div>
+                                <div>Message</div>
+                                <div>User</div>
+                            </div>
+                            <div class="activity-item">
+                                <div>Mon, 18 Aug 2025 - 12:10</div>
+                                <div>Order moved from <em>Draft</em> to <em>Completed</em> by the <em>Place order</em> transition.</div>
+                                <div>admin</div>
+                            </div>
+                            <div class="activity-item">
+                                <div>Mon, 18 Aug 2025 - 12:10</div>
+                                <div>Order receipt email sent to george@paritypen.com.</div>
+                                <div>admin</div>
+                            </div>
+                            <div class="activity-item">
+                                <div>Mon, 18 Aug 2025 - 12:10</div>
+                                <div>Customer completed checkout for this order.</div>
+                                <div>admin</div>
+                            </div>
+                            <div class="activity-item">
+                                <div>Mon, 18 Aug 2025 - 12:10</div>
+                                <div>Payment captured via <em>Example credit card</em> for $779.95 using <em>Visa ending in 1111</em>.<br>Transaction ID: 123456.</div>
+                                <div>admin</div>
+                            </div>
+                            <div class="activity-item">
+                                <div>Thu, 14 Aug 2025 - 08:41</div>
+                                <div><em>24" x 30" Hiding Goat Print</em> added to the cart.</div>
+                                <div>admin</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Limited Actions Bar -->
+                   <!-- <div style="display: flex; justify-content: end; gap: 10px; padding: 15px; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px;">
+                        <button class="btn" disabled style="text-decoration: line-through;">Edit Order</button>
+                        <button class="btn" disabled style="text-decoration: line-through;">Add Item</button>
+                        <button class="btn" disabled style="text-decoration: line-through;">Refund</button>
+                        <button class="btn btn-secondary">Resend Receipt</button>
+                        <button class="btn btn-primary">Reassign Order</button>
+                    </div>-->
+                </div> 
+                
+                <!-- Right Column -->
+                <div class="right-column">
+                    <!-- Limited Order Actions -->
+                    <div class="info-section">
+                        <div class="info-header" style="background: #d4edda; border: 2px solid #c3e6cb; padding: 15px; margin-bottom: 20px; border-radius: 4px;">Available Actions - Order Completed</div>
+                        <div class="info-content">
+                            <button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">Resend Receipt</button>
+                            <button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">Reassign Order</button>
+                            <hr style="margin: 15px 0; border: none; border-top: 1px solid #dee2e6;">
+                            <div style="font-size: 11px; color: #6c757d; text-align: center; margin-bottom: 10px;">
+                                Unavailable for completed orders:
+                            </div>
+                            <button class="btn" disabled style="width: 100%; margin-bottom: 8px; font-size: 12px;">Add Item</button>
+                            <button class="btn" disabled style="width: 100%; margin-bottom: 8px; font-size: 12px;">Apply Coupon</button>
+                             <button class="btn" disabled style="width: 100%; margin-bottom: 8px; font-size: 12px;">Save and Refresh</button>
+                            <button class="btn" disabled style="width: 100%; margin-bottom: 8px; font-size: 12px;">Place Order</button>
+                        </div>
+                    </div>
+                   <!-- <div class="info-section" style="margin-bottom: 20px;">
+                        <div class="info-header" style="display: flex; justify-content: space-between; align-items: center;">
+                            <span>Payment Information</span>
+                            <span style="font-size: 12px; color: #28a745;">✓ Captured</span>
+                        </div>
+                        <div class="info-content">
+                            <div class="locked-field">
+                                <div class="info-line">
+                                    <span class="info-label">Method:</span>
+                                    Credit Card (•••• 4242)
+                                </div>
+                                <div class="info-line">
+                                    <span class="info-label">Amount:</span>
+                                    $2,813.99
+                                </div>
+                                <div class="info-line">
+                                    <span class="info-label">Status:</span>
+                                    <span style="color: #28a745; font-weight: bold;">Captured</span>
+                                </div>
+                                <div class="info-line">
+                                    <span class="info-label">Transaction ID:</span>
+                                    ch_3PnQKJ2eZvKYlo2C0XqLprRR
+                                </div>
+                                <div class="info-line">
+                                    <span class="info-label">Captured At:</span>
+                                    August 21, 2025 3:47 PM
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                    <!-- Resend Receipt Modal Trigger -->
+                   <!-- <div class="info-section">
+                        <div class="info-header">📧 Receipt Management</div>
+                        <div class="info-content">
+                            <div style="margin-bottom: 15px; padding: 10px; background: #d1ecf1; border: 1px solid #bee5eb; border-radius: 4px; font-size: 12px; color: #0c5460;">
+                                <strong>Receipt Status</strong>
+                                <div style="margin-top: 4px;">Last sent: Aug 21, 2025 3:47 PM</div>
+                                <div>To: sarah.johnson@techsolutions.com</div>
+                            </div>
+                            
+                            <div style="margin-bottom: 10px;">
+                                <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 5px;">Send receipt to:</label>
+                                <input type="email" value="sarah.johnson@techsolutions.com" style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px;">
+                            </div>
+                            
+                            <div style="margin-bottom: 10px;">
+                                <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 5px;">Additional recipients (comma-separated):</label>
+                                <input type="text" placeholder="email1@example.com, email2@example.com" style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px;">
+                            </div>
+                            
+                            <button class="btn btn-primary" style="width: 100%; padding: 10px; font-weight: bold;">
+                                📧 Send Receipt
+                            </button>
+                            
+                            <div style="font-size: 11px; color: #666; margin-top: 8px; text-align: center;">
+                                Receipt will include order details and tracking info
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                    <!-- Reassign Order -->
+                   <!-- <div class="info-section">
+                        <div class="info-header">👤 Reassign Order</div>
+                        <div class="info-content">
+                            <div style="margin-bottom: 15px; padding: 10px; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px; font-size: 12px; color: #856404;">
+                                <strong>Current Assignment</strong>
+                                <div style="margin-top: 4px;">Customer: Sarah Johnson</div>
+                                <div>Account: sarah.johnson@techsolutions.com</div>
+                            </div>
+                            
+                            <div style="margin-bottom: 10px;">
+                                <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 5px;">Reassign to customer:</label>
+                                <input type="text" placeholder="Search by name or email..." style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; margin-bottom: 5px;">
+                                <div style="font-size: 11px; color: #666;">Enter customer email or select from existing accounts</div>
+                            </div>
+                            
+                            <div style="margin-bottom: 10px;">
+                                <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 5px;">Reason for reassignment:</label>
+                                <select style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px;">
+                                    <option>Select reason...</option>
+                                    <option>Wrong customer account</option>
+                                    <option>Company account consolidation</option>
+                                    <option>Customer request</option>
+                                    <option>Administrative correction</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            
+                            <button class="btn btn-primary" style="width: 100%; padding: 10px; font-weight: bold;">
+                                👤 Reassign Order
+                            </button>
+                            
+                            <div style="font-size: 11px; color: #dc3545; margin-top: 8px; text-align: center;">
+                                ⚠️ This will transfer order history to new customer
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Status -->
+                    <div class="info-section">
+                        <div class="info-header">Order Status</div>
+                        <div class="info-content">
+                            <div class="info-line">
+                                <span class="info-label">Status:</span>
+                                <span style="color: #28a745; font-weight: bold;">Completed</span>
+                            </div>
+                            <div class="info-line">
+                                <span class="info-label">Order ID:</span>
+                                #10003
+                            </div>
+                            <div class="info-line">
+                                <span class="info-label">Created:</span>
+                                21 Aug 2025 - 15:45
+                            </div>
+                            <div class="info-line">
+                                <span class="info-label">Completed:</span>
+                                26 Aug 2025 - 14:15
+                            </div>
+                            <div class="info-line">
+                                <span class="info-label">Cart ID:</span>
+                                cart_abc123xyz
+                            </div>
+                            <div class="info-line">
+                                <span class="info-label">Order balance:</span>
+                                <span style="color: #28a745;">$0.00 (Paid)</span>
+                            </div>
+                            <div class="info-line">
+                                <span class="info-label">Fulfillment:</span>
+                                <span style="color: #28a745;">✓ Delivered</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Timeline -->
+                   <!-- <div class="info-section">
+                        <div class="info-header">📋 Order Timeline</div>
+                        <div class="info-content">
+                            <div style="font-size: 12px;">
+                                <div style="padding: 8px 0; border-bottom: 1px solid #eee;">
+                                    <div style="font-weight: bold; color: #28a745;">✓ Delivered</div>
+                                    <div style="color: #666; font-size: 11px;">Aug 26, 2025 2:15 PM</div>
+                                </div>
+                                <div style="padding: 8px 0; border-bottom: 1px solid #eee;">
+                                    <div style="font-weight: bold;">Out for Delivery</div>
+                                    <div style="color: #666; font-size: 11px;">Aug 26, 2025 8:00 AM</div>
+                                </div>
+                                <div style="padding: 8px 0; border-bottom: 1px solid #eee;">
+                                    <div style="font-weight: bold;">Shipped</div>
+                                    <div style="color: #666; font-size: 11px;">Aug 22, 2025 10:30 AM</div>
+                                </div>
+                                <div style="padding: 8px 0; border-bottom: 1px solid #eee;">
+                                    <div style="font-weight: bold;">Processing</div>
+                                    <div style="color: #666; font-size: 11px;">Aug 21, 2025 4:00 PM</div>
+                                </div>
+                                <div style="padding: 8px 0;">
+                                    <div style="font-weight: bold;">Order Placed</div>
+                                    <div style="color: #666; font-size: 11px;">Aug 21, 2025 3:45 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

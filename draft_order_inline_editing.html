@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draft Order - Inline Editing State</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+    <div class="wireframe">
+        <!-- Header -->
+        <div class="header">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="logo"></div>
+                <div class="breadcrumb">
+                    <span>← Back to site</span>
+                    <span>|</span>
+                    <span>Administration</span>
+                    <span>Commerce</span>
+                    <span>Orders</span>
+                    <span>View Default</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <span>☆</span>
+                <span>🔍</span>
+                <span>🛒</span>
+                <span>👤</span>
+            </div>
+        </div>
+        
+        <div class="layout">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <!-- Order Header -->
+                    <div class="order-header">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <h1 class="order-title">Order 3 ☆</h1>
+                        </div>
+                    </div>
+                    
+                    <!-- Editing State Notice -->
+                    <div style="background: #f8d7da; border: 1px solid #f5c6cb; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div>
+                                <div style="font-weight: bold; color: #721c24; margin-bottom: 5px;">Editing Draft Order</div>
+                                <div style="font-size: 13px; color: #721c24; line-height: 1.4;">
+                                    You are currently editing this order. Changes will be applied when you save. 
+                                    Remember that saving will refresh the order and recalculate all pricing.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tabs -->
+                    <div class="tabs">
+                        <div class="tab active">View</div>
+                        <div class="tab">Shipments</div>
+                        <div class="tab">Payments</div>
+                    </div>
+                    
+                    <!-- Address Information - One section being edited -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <!-- Billing Information -->
+                        <div class="info-section">
+                            <div class="info-header" style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Billing Information</span>
+                                <button class="btn" style="font-size: 10px; padding: 4px 6px;">✎ Edit</button>
+                            </div>
+                            <div class="info-content">
+                                <div class="address-block">
+                                    Sarah Johnson<br>
+                                    Tech Solutions Inc<br>
+                                    456 Innovation Dr.<br>
+                                    San Francisco, CA 94105<br>
+                                    United States
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Shipping Information - BEING EDITED -->
+                        <div class="info-section" style="border: 2px solid #007cba; background: #f8f9ff;">
+                            <div class="info-header" style="display: flex; justify-content: space-between; align-items: center; background: #e7f3ff;">
+                                <span>Shipping Information</span>
+                                <div>
+                                    <button class="btn" onclick="window.location.href='order_page_wireframe.html';" style="font-size: 10px; padding: 4px 6px; margin-right: 5px; background: #6c757d; color: white;">✕ Cancel</button>
+                                    <button class="btn" style="font-size: 10px; padding: 4px 6px; background: #28a745; color: white;">✓ Save</button>
+                                </div>
+                            </div>
+                            <div class="info-content">
+                                <div style="margin-bottom: 10px;">
+                                    <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 2px; color: #666;">Full Name</label>
+                                    <input type="text" value="Sarah Johnson" style="width: 100%; padding: 4px 8px; border: 2px solid #007cba; border-radius: 3px; font-size: 14px; background: #fff;">
+                                </div>
+                                <div style="margin-bottom: 10px;">
+                                    <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 2px; color: #666;">Company</label>
+                                    <input type="text" value="Tech Solutions Inc" style="width: 100%; padding: 4px 8px; border: 2px solid #007cba; border-radius: 3px; font-size: 14px; background: #fff;">
+                                </div>
+                                <div style="margin-bottom: 10px;">
+                                    <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 2px; color: #666;">Address Line 1</label>
+                                    <input type="text" value="456 Innovation Dr." style="width: 100%; padding: 4px 8px; border: 2px solid #007cba; border-radius: 3px; font-size: 14px; background: #fff;">
+                                </div>
+                                <div style="margin-bottom: 10px;">
+                                    <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 2px; color: #666;">Address Line 2</label>
+                                    <input type="text" value="" placeholder="Apt, suite, etc. (optional)" style="width: 100%; padding: 4px 8px; border: 1px solid #ccc; border-radius: 3px; font-size: 14px;">
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                                    <div>
+                                        <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 2px; color: #666;">City</label>
+                                        <input type="text" value="San Francisco" style="width: 100%; padding: 4px 8px; border: 2px solid #007cba; border-radius: 3px; font-size: 14px; background: #fff;">
+                                    </div>
+                                    <div>
+                                        <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 2px; color: #666;">State</label>
+                                        <select style="width: 100%; padding: 4px 8px; border: 2px solid #007cba; border-radius: 3px; font-size: 14px; background: #fff;">
+                                            <option>CA</option>
+                                            <option>NY</option>
+                                            <option>TX</option>
+                                            <option>FL</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px;">
+                                    <div>
+                                        <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 2px; color: #666;">Postal Code</label>
+                                        <input type="text" value="94105" style="width: 100%; padding: 4px 8px; border: 2px solid #007cba; border-radius: 3px; font-size: 14px; background: #fff;">
+                                    </div>
+                                    <div>
+                                        <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 2px; color: #666;">Country</label>
+                                        <select style="width: 100%; padding: 4px 8px; border: 2px solid #007cba; border-radius: 3px; font-size: 14px; background: #fff;">
+                                            <option>United States</option>
+                                            <option>Canada</option>
+                                            <option>United Kingdom</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div style="border-top: 1px solid #eee; padding-top: 15px;">
+                                    <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 2px; color: #666;">Shipping Method</label>
+                                    <select style="width: 100%; padding: 4px 8px; border: 1px solid #ccc; border-radius: 3px; font-size: 14px; margin-bottom: 10px;">
+                                        <option>Standard Shipping (5-7 days)</option>
+                                        <option>2-Day Shipping</option>
+                                        <option>Next Day Shipping</option>
+                                        <option>Express Shipping</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Items with One Item Being Edited -->
+                    <div class="order-items">
+                        <div style="background: #f0f0f0; padding: 15px; border-bottom: 2px solid #333; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 15px; font-weight: bold;">
+                            <div>Title</div>
+                            <div>Unit price</div>
+                            <div>Quantity</div>
+                            <div>Total price</div>
+                            <div style="text-align: center;">Actions</div>
+                        </div>
+                        
+                        <!-- First Item - Normal State -->
+                        <div class="order-item">
+                            <div>MacBook Pro 16" - Silver</div>
+                            <div>$2,499.00</div>
+                            <div>1.00</div>
+                            <div>$2,499.00</div>
+                            <div style="text-align: center;">
+                                <button class="btn" style="font-size: 9px; padding: 2px 6px;">✎ Edit</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Second Item - BEING EDITED -->
+                        <div class="order-item-edited">
+                            <div>AppleCare+ Protection</div>
+                            <div>$399.00</div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <button style="background: #dc3545; color: white; border: none; border-radius: 3px; width: 20px; height: 20px; font-size: 12px; cursor: pointer;">−</button>
+                                <input type="number" value="2" style="width: 60px; padding: 2px 4px; border: 2px solid #007cba; border-radius: 3px; text-align: center; background: #fff;">
+                                <button style="background: #28a745; color: white; border: none; border-radius: 3px; width: 20px; height: 20px; font-size: 12px; cursor: pointer;">+</button>
+                            </div>
+                            <div style="font-weight: bold; color: #007cba;">$798.00</div>
+                            <div style="text-align: center;">
+                                <button class="btn" style="font-size: 9px; padding: 2px 6px; background: #28a745; color: white; margin-right: 3px;">✓ Save</button>
+                                <button class="btn" style="font-size: 9px; padding: 2px 6px; background: #6c757d; color: white;">✕ Cancel</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Add Item Row -->
+                        <div style="padding: 15px; border-bottom: 2px solid #007cba; background: #f8f9ff; display: flex; align-items: center; justify-content: center;">
+                            <button class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;" onclick="document.getElementById('addItemModal').style.display='flex'">
+                                ➕ Add Item to Order
+                            </button>
+                        </div>
+                        
+                        <!-- Updated Totals Showing Changes -->
+                        <div style="text-align: right; padding: 15px; border-top: 2px solid #333;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span>Subtotal</span>
+                                <span style="color: #007cba; font-weight: bold;">$3,297.00</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span>Shipping</span>
+                                <span>$15.99</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-weight: bold; border-top: 1px solid #333; padding-top: 5px;">
+                                <span>Total</span>
+                                <span style="color: #007cba; font-weight: bold;">$3,312.99</span>
+                            </div>
+                            <div style="font-size: 11px; color: #6c757d; text-align: right; margin-top: 5px;">
+                                Previous total: $2,913.99 | <strong style="color: #28a745;">+$399.00</strong>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Save Actions - Editing State -->
+                    <div style="display: flex; justify-content: end; gap: 10px; padding: 15px; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px;">
+                        <div style="font-size: 12px; color: #856404; margin-right: auto; align-self: center;">
+                            Unsaved changes will trigger order refresh
+                        </div>
+                        <button class="btn" style="background: #6c757d; color: white;">Cancel All Changes</button>
+                        <button class="btn" style="background: #ffc107; color: #212529;">Save & Refresh Order</button>
+                        <button class="btn btn-primary">Place Order</button>
+                    </div>
+                    
+                    <!-- Add Item Modal -->
+                    <div id="addItemModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+                        <div style="background: white; border: 3px solid #333; border-radius: 8px; width: 600px; max-height: 80vh; overflow-y: auto;">
+                            <!-- Modal Header -->
+                            <div style="background: #f0f0f0; padding: 15px; border-bottom: 2px solid #333; display: flex; justify-content: space-between; align-items: center;">
+                                <h3 style="margin: 0; font-size: 18px;">Add Item to Order</h3>
+                                <button onclick="document.getElementById('addItemModal').style.display='none'" style="background: none; border: none; font-size: 20px; cursor: pointer;">✕</button>
+                            </div>
+                            
+                            <!-- Search Section -->
+                            <div style="padding: 20px; border-bottom: 1px solid #dee2e6;">
+                                <div style="margin-bottom: 15px;">
+                                    <label style="display: block; font-weight: bold; margin-bottom: 5px;">Search Products:</label>
+                                    <div style="display: flex; gap: 10px;">
+                                        <input type="text" placeholder="Product name, or SKU" style="flex: 1; padding: 8px 12px; border: 2px solid #ccc; border-radius: 4px; font-size: 14px;">
+                                        <button class="btn btn-primary" style="padding: 8px 16px;">🔍 Search</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Category Filter -->
+                                <div style="display: flex; gap: 15px; align-items: center;">
+                                    <label style="font-weight: bold;">Category:</label>
+                                    <select style="padding: 6px 10px; border: 1px solid #ccc; border-radius: 3px;">
+                                        <option>All Categories</option>
+                                        <option>Computers & Laptops</option>
+                                        <option>Accessories</option>
+                                        <option>Software</option>
+                                        <option>Services</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- Product Results -->
+                            <div style="padding: 20px;">
+                                <div style="font-weight: bold; margin-bottom: 15px; color: #495057;">Search Results (4 items found):</div>
+                                
+                                <!-- Product Item 1 -->
+                                <div style="border: 1px solid #dee2e6; border-radius: 4px; padding: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 15px;">
+                                    <div style="width: 60px; height: 60px; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 24px;">💻</div>
+                                    <div style="flex: 1;">
+                                        <div style="font-weight: bold; margin-bottom: 3px;">MacBook Air 13" - Space Gray</div>
+                                        <div style="font-size: 12px; color: #6c757d; margin-bottom: 3px;">SKU: MBA13-SG-256</div>
+                                        <div style="font-size: 14px; font-weight: bold; color: #007cba;">$1,199.00</div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="font-size: 12px;">Qty:</label>
+                                        <input type="number" value="1" min="1" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; text-align: center;">
+                                        <button class="btn btn-primary" style="font-size: 12px; padding: 6px 12px;">Add to Order</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Product Item 2 -->
+                                <div style="border: 1px solid #dee2e6; border-radius: 4px; padding: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 15px;">
+                                    <div style="width: 60px; height: 60px; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 24px;">🖱️</div>
+                                    <div style="flex: 1;">
+                                        <div style="font-weight: bold; margin-bottom: 3px;">Magic Mouse 2 - White</div>
+                                        <div style="font-size: 12px; color: #6c757d; margin-bottom: 3px;">SKU: MM2-WHITE</div>
+                                        <div style="font-size: 14px; font-weight: bold; color: #007cba;">$79.00</div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="font-size: 12px;">Qty:</label>
+                                        <input type="number" value="1" min="1" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; text-align: center;">
+                                        <button class="btn btn-primary" style="font-size: 12px; padding: 6px 12px;">Add to Order</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Product Item 3 -->
+                                <div style="border: 1px solid #dee2e6; border-radius: 4px; padding: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 15px;">
+                                    <div style="width: 60px; height: 60px; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 24px;">⌨️</div>
+                                    <div style="flex: 1;">
+                                        <div style="font-weight: bold; margin-bottom: 3px;">Magic Keyboard with Touch ID</div>
+                                        <div style="font-size: 12px; color: #6c757d; margin-bottom: 3px;">SKU: MK-TOUCHID</div>
+                                        <div style="font-size: 14px; font-weight: bold; color: #007cba;">$199.00</div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="font-size: 12px;">Qty:</label>
+                                        <input type="number" value="1" min="1" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; text-align: center;">
+                                        <button class="btn btn-primary" style="font-size: 12px; padding: 6px 12px;">Add to Order</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Product Item 4 -->
+                                <div style="border: 1px solid #dee2e6; border-radius: 4px; padding: 15px; margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">
+                                    <div style="width: 60px; height: 60px; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 24px;">💿</div>
+                                    <div style="flex: 1;">
+                                        <div style="font-weight: bold; margin-bottom: 3px;">Final Cut Pro License</div>
+                                        <div style="font-size: 12px; color: #6c757d; margin-bottom: 3px;">SKU: FCP-LICENSE</div>
+                                        <div style="font-size: 14px; font-weight: bold; color: #007cba;">$299.99</div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <label style="font-size: 12px;">Qty:</label>
+                                        <input type="number" value="1" min="1" style="width: 60px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; text-align: center;">
+                                        <button class="btn btn-primary" style="font-size: 12px; padding: 6px 12px;">Add to Order</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Modal Footer -->
+                            <div style="background: #f8f9fa; padding: 15px; border-top: 1px solid #dee2e6; display: flex; justify-content: space-between; align-items: center;">
+                                <div style="font-size: 12px; color: #6c757d;">
+                                    💡 Items will be added at current catalog prices
+                                </div>
+                                <button onclick="document.getElementById('addItemModal').style.display='none'" class="btn" style="background: #6c757d; color: white; padding: 8px 16px;">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-activity">
+                        <div class="section-header">Order activity</div>
+                        <div style="padding: 15px; border-bottom: 1px solid #ccc;">
+                            <div class="collapsible">Comment on this order</div>
+                        </div>
+                        <div style="padding: 15px;">
+                            <div style="display: grid; grid-template-columns: 100px 1fr 60px; gap: 15px; margin-bottom: 15px; font-weight: bold; font-size: 14px;">
+                                <div>Date</div>
+                                <div>Message</div>
+                                <div>User</div>
+                            </div>
+                            <div class="activity-item">
+                                <div>Mon, 18 Aug 2025 - 12:10</div>
+                                <div>Order moved from <em>Draft</em> to <em>Completed</em> by the <em>Place order</em> transition.</div>
+                                <div>admin</div>
+                            </div>
+                            <div class="activity-item">
+                                <div>Mon, 18 Aug 2025 - 12:10</div>
+                                <div>Order receipt email sent to george@paritypen.com.</div>
+                                <div>admin</div>
+                            </div>
+                            <div class="activity-item">
+                                <div>Mon, 18 Aug 2025 - 12:10</div>
+                                <div>Customer completed checkout for this order.</div>
+                                <div>admin</div>
+                            </div>
+                            <div class="activity-item">
+                                <div>Mon, 18 Aug 2025 - 12:10</div>
+                                <div>Payment captured via <em>Example credit card</em> for $779.95 using <em>Visa ending in 1111</em>.<br>Transaction ID: 123456.</div>
+                                <div>admin</div>
+                            </div>
+                            <div class="activity-item">
+                                <div>Thu, 14 Aug 2025 - 08:41</div>
+                                <div><em>24" x 30" Hiding Goat Print</em> added to the cart.</div>
+                                <div>admin</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div class="right-column">
+                    <!-- Order Actions -->
+                    <div class="info-section">
+                        <div class="info-header" style="background: #fff3cd; color: #856404; border-bottom: 1px solid #ffeaa7;">Order Actions - DRAFT</div>
+                        <div class="info-content">
+                            <div style="font-size: 11px; color: #6c757d; text-align: center; margin-bottom: 10px;">
+                                Unavailable for draft orders:
+                            </div>
+                            <button class="btn" disabled style="width: 100%; margin-bottom: 10px;">Resend receipt</button>
+                            <button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">Reassign order</button>
+							<button onclick="document.getElementById('addItemModal').style.display='flex'" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">+ Add item</button>
+							<button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">+ Apply Coupon</button>
+							<button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;background-color:#ffc107;color:black;">Save & Refresh Order</button>
+                            <button class="btn btn-primary" onclick="window.location.href='completed_order_wireframe.html';" style="width: 100%; margin-bottom: 10px;">Place Order</button>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Assistant -->
+                    <div class="info-section">
+                        <div class="info-header">CSR Assistant</div>
+                        <div class="info-content">
+                            <textarea 
+                                placeholder="Tell me what you'd like to change about this order..."
+                                style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #ccc; border-radius: 4px; font-family: Arial, sans-serif; font-size: 14px; resize: vertical; margin-bottom: 15px;"
+                            ></textarea>
+                            
+                            <div style="margin-bottom: 15px;">
+                                <div style="font-size: 12px; font-weight: bold; margin-bottom: 8px; color: #666;">Common actions:</div>
+                                <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                                    <button class="btn" style="font-size: 11px; padding: 4px 8px; background: #f8f9fa; border: 1px solid #ddd;">Add 2 more items</button>
+                                    <button class="btn" style="font-size: 11px; padding: 4px 8px; background: #f8f9fa; border: 1px solid #ddd;">Apply 10% discount</button>
+                                    <button class="btn" style="font-size: 11px; padding: 4px 8px; background: #f8f9fa; border: 1px solid #ddd;">Change shipping</button>
+                                    <button class="btn" style="font-size: 11px; padding: 4px 8px; background: #f8f9fa; border: 1px solid #ddd;">Update address</button>
+                                    <button class="btn" style="font-size: 11px; padding: 4px 8px; background: #f8f9fa; border: 1px solid #ddd;">Refund $50</button>
+                                    <button class="btn" style="font-size: 11px; padding: 4px 8px; background: #f8f9fa; border: 1px solid #ddd;">Add coupon</button>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-primary" style="width: 100%; padding: 10px; font-weight: bold;">
+                                ✨ Preview Changes
+                            </button>
+                            
+                            <div style="font-size: 11px; color: #666; margin-top: 8px; text-align: center;">
+                                AI will show you what changes will be made before applying them
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Status -->
+                    <div class="info-section">
+                        <div class="info-header">Completed</div>
+                        <div class="info-content">
+                            <div class="info-line">
+                                <span class="info-label">Completed:</span>
+                                18 Aug 2025 - 12:10
+                            </div>
+                            <div class="info-line">
+                                <span class="info-label">Placed:</span>
+                                18 Aug 2025 - 12:10
+                            </div>
+                            <div class="info-line">
+                                <span class="info-label">Changed:</span>
+                                18 Aug 2025 - 12:10
+                            </div>
+                            <div class="info-line">
+                                <span class="info-label">Order balance:</span>
+                                $0.00
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Customer Information -->
+                    <div class="info-section">
+                        <div class="info-header collapsible">Customer Information</div>
+                        <div class="info-content">
+                            <div class="info-line">
+                                <span class="info-label">Customer:</span>
+                                admin
+                            </div>
+                            <div class="info-line">
+                                <span class="info-label">Contact email:</span>
+                                george@centarro.io
+                            </div>
+                            <div class="info-line">
+                                <span class="info-label">IP address:</span>
+                                172.20.0.5
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <!-- Other -->
+                    <div class="info-section">
+                        <div class="info-header collapsible">Other</div>
+                        <div class="info-content">
+                            <div class="info-line">
+                                <span class="info-label">Store:</span>
+                                <a href="#" style="color: #007cba;">Commerce Kickstart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

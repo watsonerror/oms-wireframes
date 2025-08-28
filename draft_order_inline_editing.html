@@ -57,9 +57,9 @@
                     <div style="background: #f8d7da; border: 1px solid #f5c6cb; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
                         <div style="display: flex; align-items: center; gap: 12px;">
                             <div>
-                                <div style="font-weight: bold; color: #721c24; margin-bottom: 5px;">Editing a draft order</div>
+                                <div style="font-weight: bold; color: #721c24; margin-bottom: 5px;">Editing a draft order.</div>
                                 <div style="font-size: 13px; color: #721c24; line-height: 1.4;">
-                                    You are currently editing a draft order, which will refresh on save similar to a customer shopping cart.
+                                    Every save button will refresh the entire order similar to a customer shopping cart.
                                     Saving will recalculate all prices and reapply adjustments.
                                 </div>
                             </div>
@@ -117,7 +117,7 @@
                                 <div style="margin-bottom: 10px;">
                                     <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 2px; color: #666;">Company</label>
                                     <input type="text" value="Tech Solutions Inc" style="width: 100%; padding: 4px 8px; border: 2px solid #007cba; border-radius: 3px; font-size: 14px; background: #fff;">
-                                </div>
+								</div>
                                 <div style="margin-bottom: 10px;">
                                     <label style="display: block; font-size: 12px; font-weight: bold; margin-bottom: 2px; color: #666;">Address Line 1</label>
                                     <input type="text" value="456 Innovation Dr." style="width: 100%; padding: 4px 8px; border: 2px solid #007cba; border-radius: 3px; font-size: 14px; background: #fff;">
@@ -228,17 +228,10 @@
                     </div>
                     
                     <!-- Save Actions - Editing State -->
-                    <div style="display: flex; justify-content: end; gap: 10px; padding: 15px; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px;">
-                        <div style="font-size: 12px; color: #856404; margin-right: auto; align-self: center;">
-                            Unsaved changes will trigger order refresh
-                        </div>
-                        <button class="btn" style="background: #6c757d; color: white;">Cancel All Changes</button>
-                        <button class="btn" style="background: #ffc107; color: #212529;">Save & Refresh Order</button>
-                        <button class="btn btn-primary">Place Order</button>
-                    </div>
+                    
                     
                     <!-- Add Item Modal -->
-                    <div id="addItemModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+                    <div id="addItemModal" style="display: none; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000; align-items: center; justify-content: center;">
                         <div style="background: white; border: 3px solid #333; border-radius: 8px; width: 600px; max-height: 80vh; overflow-y: auto;">
                             <!-- Modal Header -->
                             <div style="background: #f0f0f0; padding: 15px; border-bottom: 2px solid #333; display: flex; justify-content: space-between; align-items: center;">
@@ -261,7 +254,7 @@
                                     <label style="font-weight: bold;">Category:</label>
                                     <select style="padding: 6px 10px; border: 1px solid #ccc; border-radius: 3px;">
                                         <option>All Categories</option>
-                                        <option>Computers & Laptops</option>
+                                        <option>Computers &amp; Laptops</option>
                                         <option>Accessories</option>
                                         <option>Software</option>
                                         <option>Services</option>
@@ -392,23 +385,22 @@
                             <div style="font-size: 11px; color: #6c757d; text-align: center; margin-bottom: 10px;">
                                 Unavailable for draft orders:
                             </div>
-                            <button class="btn" disabled style="width: 100%; margin-bottom: 10px;">Resend receipt</button>
+                            <button class="btn" disabled="" style="width: 100%; margin-bottom: 10px;">Resend receipt</button>
+    <hr style="margin: 15px 0; border: none; border-top: 1px solid #dee2e6;">
                             <button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">Reassign order</button>
 							<button onclick="document.getElementById('addItemModal').style.display='flex'" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">+ Add item</button>
 							<button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">+ Apply Coupon</button>
-							<button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;background-color:#ffc107;color:black;">Save & Refresh Order</button>
-                            <button class="btn btn-primary" onclick="window.location.href='completed_order_wireframe.html';" style="width: 100%; margin-bottom: 10px;">Place Order</button>
-                        </div>
+							<button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;background-color:#ffc107;color:black;">Save &amp; Refresh Order</button>
+    <hr style="margin: 15px 0; border: none; border-top: 1px solid #dee2e6;">
+                            <button class="btn btn-primary" onclick="window.location.href='completed_order_wireframe.html';" style="width: 100%;margin-bottom: 10px;">Place Order</button>
+                        <button class="btn btn-primary" onclick="window.location.href='completed_order_wireframe.html';" style="width: 100%;margin-bottom: 10px;">Cancel order</button></div>
                     </div>
                     
                     <!-- AI Assistant -->
                     <div class="info-section">
                         <div class="info-header">CSR Assistant</div>
                         <div class="info-content">
-                            <textarea 
-                                placeholder="Tell me what you'd like to change about this order..."
-                                style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #ccc; border-radius: 4px; font-family: Arial, sans-serif; font-size: 14px; resize: vertical; margin-bottom: 15px;"
-                            ></textarea>
+                            <textarea placeholder="Tell me what you'd like to change about this order..." style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #ccc; border-radius: 4px; font-family: Arial, sans-serif; font-size: 14px; resize: vertical; margin-bottom: 15px;"></textarea>
                             
                             <div style="margin-bottom: 15px;">
                                 <div style="font-size: 12px; font-weight: bold; margin-bottom: 8px; color: #666;">Common actions:</div>
@@ -434,7 +426,7 @@
                     
                     <!-- Order Status -->
                     <div class="info-section">
-                        <div class="info-header">Completed</div>
+                        <div class="info-header">State: Completed</div>
                         <div class="info-content">
                             <div class="info-line">
                                 <span class="info-label">Completed:</span>
@@ -457,35 +449,30 @@
                     
                     <!-- Customer Information -->
                     <div class="info-section">
-                        <div class="info-header collapsible">Customer Information</div>
+                        <div class="info-header collapsible">Order details</div>
                         <div class="info-content">
                             <div class="info-line">
-                                <span class="info-label">Customer:</span>
+                                <span class="info-label">Store:</span>
+                                <a href="#" style="color: #007cba;">Commerce Kickstart</a>
+                            </div><div class="info-line">
+                                <span class="info-label">IP address:</span>
+                                172.20.0.5
+                            </div><div class="info-line">
+                                <span class="info-label">User account:</span>
                                 admin
                             </div>
                             <div class="info-line">
                                 <span class="info-label">Contact email:</span>
                                 george@centarro.io
                             </div>
-                            <div class="info-line">
-                                <span class="info-label">IP address:</span>
-                                172.20.0.5
-                            </div>
-                        </div>
+                            
+                        <button class="btn btn-primary" style="width: 100%; padding: 10px; font-weight: bold;">✎ Edit order details</button></div>
                     </div>
                     
 
                     
                     <!-- Other -->
-                    <div class="info-section">
-                        <div class="info-header collapsible">Other</div>
-                        <div class="info-content">
-                            <div class="info-line">
-                                <span class="info-label">Store:</span>
-                                <a href="#" style="color: #007cba;">Commerce Kickstart</a>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

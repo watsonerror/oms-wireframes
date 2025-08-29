@@ -188,21 +188,22 @@
                 
                 <!-- Right Column -->
                 <div class="right-column">
-                     <!-- Order Actions -->
+                    <!-- Order Actions -->
                     <div class="info-section">
-                        <div class="info-header" style="background: #fff3cd; color: #856404; border-bottom: 1px solid #ffeaa7;">Order Actions - DRAFT</div>
-                        
+                        <div class="info-header" style="background: #fff3cd; color: #856404; border-bottom: 1px solid #ffeaa7;">Order actions: Draft</div>
                         <div class="info-content">
                             <div style="font-size: 11px; color: #6c757d; text-align: center; margin-bottom: 10px;">
                                 Unavailable for draft orders:
                             </div>
-                            <button class="btn" disabled style="width: 100%; margin-bottom: 10px;">Resend receipt</button>
+                            <button class="btn" disabled="" style="width: 100%; margin-bottom: 10px;">Resend receipt</button>
+							<hr style="margin: 15px 0; border: none; border-top: 1px solid #dee2e6;">
                             <button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">Reassign order</button>
-							<button onclick="document.getElementById('addItemModal').style.display='flex'" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">+ Add item</button>
-							<button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">+ Apply Coupon</button>
-							<button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;background-color:#ffc107;">Save & Refresh Order</button>
-                            <button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">Place Order</button>
-                        </div>
+							<button onclick="document.getElementById('addItemModal').style.display='flex'" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">+ Add order item</button>
+							<button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">+ Apply coupon</button>
+    						<hr style="margin: 15px 0; border: none; border-top: 1px solid #dee2e6;">
+                            <button class="btn btn-primary" onclick="window.location.href='completed_order_wireframe.html';" style="width: 100%;margin-bottom: 10px;">Place order</button>
+                        	<button class="btn btn-primary" onclick="alert('Cancel Order: are you sure?');" style="width: 100%;margin-bottom: 10px;">Cancel order</button>
+						</div>
                     </div>
                     
                     <!-- AI Assistant -->
